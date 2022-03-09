@@ -76,9 +76,11 @@ class App extends Component {
   onButtonSubmit = () => {  
     this.setState({imgURL: this.state.input});
     app.models
-    .predict(Clarifai.FACE_DETECT_MODEL,
-     this.state.input)
-    .then(response => this.displayFaceBox(this.calculateFaceLocation(response)))
+    .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
+    .then((response) => { 
+      this.displayFaceBox(this.calculateFaceLocation(response));
+      console.log(response)
+    })
     .catch(err => console.log(err));
   }
   
@@ -88,7 +90,7 @@ class App extends Component {
     } else if (route === 'home') {
       this.setState({isSignedIn: true})
     }
-    this.setState({route: route});
+      this.setState({route: route});
   }
 
   render() {
