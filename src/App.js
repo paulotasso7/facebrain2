@@ -15,10 +15,10 @@ import Register from './components/Register/Register';
 const particlesOptions = {
   particles: {
     number: {
-      value: 80
+      value: 49
     },
     line_linked: {
-      distance: 175
+      distance: 198
     }    
   },
   interactivity: {
@@ -26,7 +26,7 @@ const particlesOptions = {
     "events":{
       "onhover":{
         "enable":true,
-        "mode":"repulse"
+        "mode":"react"
       },
       "onclick":{
         "enable":true,
@@ -90,7 +90,7 @@ class App extends Component {
 
     onButtonSubmit = () => {  
         this.setState({imgURL: this.state.input});
-        fetch('http://localhost:3000/imageurl', {
+        fetch('https://blooming-anchorage-07854.herokuapp.com/imageurl', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -100,7 +100,7 @@ class App extends Component {
         .then(res => res.json())
         .then((response) => { 
             if(response) {
-                fetch('http://localhost:3000/image', {
+                fetch('https://blooming-anchorage-07854.herokuapp.com/image', {
                     method: 'put',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({
@@ -140,10 +140,7 @@ class App extends Component {
                 ?   <div>
                         <Logo />
                         <Rank name={this.state.user.name} entries={this.state.user.entries}/>
-                        <ImgLinkForm 
-                        onInputChange= {this.onInputChange}
-                        onButtonSubmit= {this.onButtonSubmit}
-                        />
+                        <ImgLinkForm onInputChange= {this.onInputChange} onButtonSubmit= {this.onButtonSubmit} />
                         <FaceReckon 
                         box= {box}
                         imgURL= {imgURL}
