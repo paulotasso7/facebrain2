@@ -79,7 +79,7 @@ class Signin extends React.Component {
             <div className="">
               <ReCAPTCHA
                 style={{ marginTop: "-15px" }}
-                sitekey="6Lc5fFUgAAAAAOhWhbI9g-wg5P8h89z02ckXScIG"
+                sitekey={process.env.RECAPTCHA_LOCALHOST_SITE_KEY}
                 onChange={this.onRecaptchaChange}
               />
               <input
