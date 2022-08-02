@@ -6,7 +6,7 @@ Projeto desenvolvido ao longo do curso ZTM.
 
 ## `COMO RODAR O PROJETO`
 
-O projeto foi criado através do bootstrap reate-react-app
+O projeto foi criado através do dreate-react-app
 ###    `npx create-react-app`
 
 Primeiramente, deve-se inicializar o NPM no diretorio do projeto.
