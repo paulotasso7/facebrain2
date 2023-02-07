@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Particles from 'react-particles-js';
+
 
 
 import './App.css';
@@ -12,29 +12,29 @@ import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 
 
-const particlesOptions = {
-  particles: {
-    number: {
-      value: 80
-    },
-    line_linked: {
-      distance: 175
-    }    
-  },
-  interactivity: {
-    "detect_on":"window",
-    "events":{
-      "onhover":{
-        "enable":true,
-        "mode":"repulse"
-      },
-      "onclick":{
-        "enable":true,
-        "mode":"push"
-      }
-    }
-  }      
-}
+// const particlesOptions = {
+//   particles: {
+//     number: {
+//       value: 80
+//     },
+//     line_linked: {
+//       distance: 175
+//     }    
+//   },
+//   interactivity: {
+//     "detect_on":"window",
+//     "events":{
+//       "onhover":{
+//         "enable":true,
+//         "mode":"repulse"
+//       },
+//       "onclick":{
+//         "enable":true,
+//         "mode":"push"
+//       }
+//     }
+//   }      
+// }
 
 const initialState = {
     input: '',
@@ -131,10 +131,10 @@ class App extends Component {
         const {isSignedIn, route, box, imgURL} = this.state;  
         return (
             <div className="App">
-                <Particles 
+                {/* <Particles 
                 className='particles'
                 params={particlesOptions}
-                />
+                /> */}
                 <Navigation isSignedIn={isSignedIn} onRouteChange= { this.onRouteChange }/>
                 { route === 'home'
                 ?   <div>
